@@ -18,5 +18,5 @@ class FS(Enum):
     def get_type(t: str):
         for fs in FS:
             if fs.name == t:
-                return fs.value
-        return FS.SHIRT.value
+                return fs
+        return FS.SHIRT

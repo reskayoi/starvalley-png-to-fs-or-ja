@@ -1,4 +1,5 @@
 import os
+
 from PIL import Image
 
 
@@ -29,7 +30,11 @@ class Rectangle:
         return Rectangle(self.x + offset_x, self.y + offset_y, self.width, self.height)
 
 
-def load_no_blank_img(input_img_name: str, sprite_width: int, sprite_hight: int,need_resize) -> Image:
+def get_img_pixel_rgb(img: Image, pixel) -> list:
+    return list(img.getpixel(pixel))[0:3]
+
+
+def load_no_blank_img(input_img_name: str, sprite_width: int, sprite_hight: int, need_resize) -> Image:
     """
     加载去除空白的原始图片
     """
@@ -91,7 +96,7 @@ def remove_img_blank(img: Image, sprite_width: int, sprite_hight: int, need_resi
         if now_x_num != 0:
             now_y_num += 1
         # 计算最大值
-        max_x_size = now_x_num * sprite_width if max_x_size < now_x_num*sprite_width else max_x_size
+        max_x_size = now_x_num * sprite_width if max_x_size < now_x_num * sprite_width else max_x_size
         # 重置x轴到0
         now_x_num = 0
 
