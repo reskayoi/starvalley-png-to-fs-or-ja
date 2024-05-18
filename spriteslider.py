@@ -59,7 +59,7 @@ def manifest(config: dict):
             "MinimumVersion": "6.0.0"
         }
     }
-    output_dir = config.pop("output_dir")
+    output_dir = config["name"]
     with open(f"{output_dir}/manifest.json", mode="w", encoding="utf-8") as f:
         json.dump(dict(config, **manifest_dict), f, indent=2, ensure_ascii=False)
 
@@ -72,7 +72,7 @@ def main():
     config.read('config.ini')
 
     # 建立输出文件夹
-    output_dir = config["manifest"]["output_dir"]
+    output_dir = config["manifest"]["Name"]
     mkdir(f"{output_dir}")
     print(f"outdir:{output_dir}")
 
@@ -86,6 +86,9 @@ def main():
         print(f"pack {pack_config} load success.")
 
     shutil.make_archive(output_dir, 'zip', output_dir)
+    print(f"\noutput {output_dir}.zip.")
+    shutil.rmtree(output_dir)
+    print(f"clean temp dir success.")
 
 
 if __name__ == '__main__':
