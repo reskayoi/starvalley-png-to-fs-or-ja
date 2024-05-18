@@ -13,6 +13,7 @@ class FSType:
 class FS(Enum):
     HAT = FSType("Hats", "hat", 20, 20, 4)
     SHIRT = FSType("Shirts", "shirt", 8, 8, 4)
+    HAIR = FSType("Hairs", "hair", 32, 16, 3)
 
     def get_type(t: str):
         for fs in FS:
