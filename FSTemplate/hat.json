@@ -1,0 +1,63 @@
+{
+  "Name": "Hat Template",
+  "FrontHat": {
+    "DisableGrayscale": true,
+    "StartingPosition": {
+      "X": 0,
+      "Y": 0
+    },
+    "HeadPosition": {
+      "X": 0,
+      "Y": 0
+    },
+    "HatSize": {
+      "Width": 20,
+      "Length": 20
+    }
+  },
+  "RightHat": {
+    "DisableGrayscale": true,
+    "StartingPosition": {
+      "X": 0,
+      "Y": 20
+    },
+    "HeadPosition": {
+      "X": 0,
+      "Y": 0
+    },
+    "HatSize": {
+      "Width": 20,
+      "Length": 20
+    }
+  },
+  "LeftHat": {
+    "DisableGrayscale": true,
+    "StartingPosition": {
+      "X": 0,
+      "Y": 40
+    },
+    "HeadPosition": {
+      "X": 0,
+      "Y": 0
+    },
+    "HatSize": {
+      "Width": 20,
+      "Length": 20
+    }
+  },
+  "BackHat": {
+    "DisableGrayscale": true,
+    "StartingPosition": {
+      "X": 0,
+      "Y": 60
+    },
+    "HeadPosition": {
+      "X": 0,
+      "Y": 0
+    },
+    "HatSize": {
+      "Width": 20,
+      "Length": 20
+    }
+  }
+}
