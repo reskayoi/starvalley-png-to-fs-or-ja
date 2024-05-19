@@ -66,8 +66,11 @@ def main():
     config.read('config.ini')
 
     # 读取运行时配置
-    pack_mode=config["run"]["pack_mode"]
-    config.pop("run")
+    try:
+        pack_mode = config["run"]["pack_mode"]
+        config.pop("run")
+    except Exception:
+        pack_mode = "FS"
     print(f"run in {pack_mode} mode")
 
     # 建立输出文件夹

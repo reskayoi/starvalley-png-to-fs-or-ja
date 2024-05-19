@@ -6,9 +6,6 @@
 1. 安装python和pillow包
 2. 配置config.ini
     ```ini
-   [run]
-   pack_mode=FS;FS或JA
-   
    [manifest]
    name=;mod名字
    author=;作者
@@ -31,6 +28,10 @@ slide_width=自定义单个贴图的宽度
 slide_num=自定义几个贴图组成一个素材图片
 resize=是否在读取图片前去除四周空白（不建议使用，除非原有图片大小不符合规范，且单个贴图不存在整行或整列的空白）
 preview=是否在压缩包内存放总预览图
+
+--模式切换--
+[run]
+pack_mode=JA;FS/JA
 
 --FS的SHIRTS类型特别设置--
 sleeve=true;是否有袖子
