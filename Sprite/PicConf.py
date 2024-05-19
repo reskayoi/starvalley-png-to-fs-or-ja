@@ -1,7 +1,7 @@
 import re
 from configparser import SectionProxy
 
-from FSTemplate.FS import FS
+from Template import Template
 from Tool.FileTool import load_no_blank_img
 
 
@@ -10,14 +10,15 @@ class PicConf:
     pic config
     """
 
-    def __init__(self, config: SectionProxy):
+    def __init__(self, config: SectionProxy, pack_mode: str):
+        self.pack_mode=pack_mode
         self.input_img_name = str(config["input_img_name"])
         self.prefix = str(config["prefix"])
-        self.fs_type = FS.get_type(str(config["FS_type"])).value
+        self.pic_type = Template.get_type(pack_mode,str(config["type"]))
         self.slide_height = int(
-            config["slide_height"]) if "slide_height" in config.keys() else self.fs_type.slide_height
-        self.slide_width = int(config["slide_width"]) if "slide_width" in config.keys() else self.fs_type.slide_width
-        self.slide_num = int(config["slide_num"]) if "slide_num" in config.keys() else self.fs_type.slide_num
+            config["slide_height"]) if "slide_height" in config.keys() else self.pic_type.value.slide_height
+        self.slide_width = int(config["slide_width"]) if "slide_width" in config.keys() else self.pic_type.value.slide_width
+        self.slide_num = int(config["slide_num"]) if "slide_num" in config.keys() else self.pic_type.value.slide_num
         self.need_resize = bool(config["resize"]) if "resize" in config.keys() else False
         self.need_preview = bool(config["preview"]) if "preview" in config.keys() else False
         self.sleeve = bool(config["sleeve"]) if "sleeve" in config.keys() else False

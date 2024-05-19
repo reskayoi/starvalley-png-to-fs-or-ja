@@ -1,3 +1,4 @@
+import json
 import os
 
 from PIL import Image
@@ -103,8 +104,16 @@ def remove_img_blank(img: Image, sprite_width: int, sprite_hight: int, need_resi
     return get_slide_img(no_blank_img, Rectangle(0, 0, max_x_size, now_y_num * sprite_hight))
 
 
-def mkdir(path: str):
+def mkdir(path: str, error_when_exists=False):
     try:
         os.mkdir(path)
     except FileExistsError:
-        pass
+        if error_when_exists:
+            raise FileExistsError
+
+
+def load_json(file_path: str):
+    with open(file_path, mode="r", encoding="utf-8") as f:
+        json_file = json.load(f)
+    print(f"loaded {file_path}")
+    return json_file
