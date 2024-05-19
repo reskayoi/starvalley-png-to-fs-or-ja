@@ -1,7 +1,6 @@
 from enum import Enum
 
 from Sprite import JASprite
-from Sprite.PicConf import PicConf
 from Tool.FileTool import load_json
 
 
@@ -33,7 +32,7 @@ def get_type(t: str):
     return JAEnum.SHIRT
 
 
-def create_sprite(conf: PicConf, sprite_index: int):
+def create_sprite(conf, sprite_index: int):
     return JASprite.ObjectSprite(conf, sprite_index)
 
 

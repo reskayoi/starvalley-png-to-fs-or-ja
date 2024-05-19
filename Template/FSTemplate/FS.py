@@ -1,7 +1,6 @@
 from enum import Enum
 
 from Sprite import FSSprite
-from Sprite.PicConf import PicConf
 from Tool.FileTool import load_json
 
 
@@ -31,7 +30,7 @@ def get_type(t: str):
     return FSEnum.SHIRT
 
 
-def create_sprite(conf: PicConf, sprite_index: int):
+def create_sprite(conf, sprite_index: int):
     if conf.pic_type == FSEnum.SHIRT:
         return FSSprite.ShirtSprite(conf, sprite_index)
     else:

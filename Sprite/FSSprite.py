@@ -1,13 +1,12 @@
 import json
 
 from Sprite.AbstractSprite import AbstractSprite
-from Sprite.PicConf import PicConf
 from Tool.FileTool import get_img_pixel_rgb
 
 
 class ObjectSprite(AbstractSprite):
 
-    def __init__(self, conf: PicConf, sprite_index: int) -> None:
+    def __init__(self, conf, sprite_index: int) -> None:
         super(ObjectSprite,self).__init__(conf, sprite_index)
 
     def save_sprite(self, sprite_dir: str) -> None:
@@ -22,7 +21,7 @@ class ObjectSprite(AbstractSprite):
 
 
 class ShirtSprite(ObjectSprite):
-    def __init__(self, conf: PicConf, sprite_index: int):
+    def __init__(self, conf, sprite_index: int):
         super(ShirtSprite, self).__init__(conf, sprite_index)
 
     def save_json(self, sprite_dir: str, template: dict, output_index=-1) -> None:

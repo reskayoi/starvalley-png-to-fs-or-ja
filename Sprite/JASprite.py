@@ -1,12 +1,11 @@
 import json
 
 from Sprite.AbstractSprite import AbstractSprite
-from Sprite.PicConf import PicConf
 
 
 class ObjectSprite(AbstractSprite):
 
-    def __init__(self, conf: PicConf, sprite_index: int) -> None:
+    def __init__(self, conf, sprite_index: int) -> None:
         super(ObjectSprite,self).__init__(conf, sprite_index)
 
     def save_sprite(self, sprite_dir: str) -> None:

@@ -1,4 +1,3 @@
-from Sprite.PicConf import PicConf
 from Template.FSTemplate import FS
 from Template.JATemplate import JA
 
@@ -18,9 +17,9 @@ def get_manifest(mode: str):
     return run_mode(mode).get_manifest()
 
 
-def create_sprite(conf: PicConf, sprite_index: int):
+def create_sprite(conf, sprite_index: int):
     return run_mode(conf.pack_mode).create_sprite(conf, sprite_index)
 
 
-def load_template(conf: PicConf):
+def load_template(conf):
     return run_mode(conf.pack_mode).load_template(conf.pic_type)

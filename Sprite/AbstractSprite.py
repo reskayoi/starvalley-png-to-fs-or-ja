@@ -1,12 +1,11 @@
 from abc import abstractmethod, ABC
 
-from Sprite.PicConf import PicConf
 from Tool.FileTool import Rectangle
 
 
 class AbstractSprite(ABC):
 
-    def __init__(self, conf: PicConf, sprite_index: int) -> None:
+    def __init__(self, conf, sprite_index: int) -> None:
         self.img = None
         self.conf = conf
         self.sprite_index = sprite_index
