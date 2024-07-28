@@ -14,7 +14,7 @@
    uniqueID=;modId
 
    [用于区分不同PNG的设置]
-   FS_type=HAT;素材类型：HAT/SHIRT/HAIR
+   type=HAT;素材类型：HAT/SHIRT/HAIR
    input_img_name=;素材文件名（不包含png后缀）
    prefix=;生成的单个fs配置名称前缀
    ```
